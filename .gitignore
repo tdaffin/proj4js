@@ -5,3 +5,5 @@ coverage
 projs.js
 .DS_STORE
 dist
+typings/
+out/
