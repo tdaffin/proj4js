@@ -393,10 +393,10 @@ function startTests(chai, proj4, testPoints) {
 
     describe('Nadgrids', function() {
       var tests = [
-        [-44.382211538462, 40.3768, -44.380749, 40.377457], // just inside the lower limit
-        [-87.617788, 59.623262, -87.617659, 59.623441], // just inside the upper limit
-        [-44.5, 40.5, -44.498553, 40.500632], // inside the first square
-        [-60, 50, -59.999192, 50.000058], // a general point towards the middle of the grid
+        [-44.382211538462, 40.3768, -44.382332, 40.376896], // just inside the lower limit
+        [-87.617788, 59.623262, -87.616026, 59.623205], // just inside the upper limit
+        [-44.5, 40.5, -44.500114, 40.500093], // inside the first square
+        [-60, 50, -59.999522, 50.000061], // a general point towards the middle of the grid
         [0, 0, 0, 0] // fall back to null
       ];
 
@@ -447,8 +447,8 @@ function startTests(chai, proj4, testPoints) {
       });
 
       var inverseTests = [
-        [-44.5, 40.5, -44.498553, 40.500632],
-        [-60, 50, -59.999192, 50.000058]
+        [-44.5, 40.5, -44.500114, 40.500093],
+        [-60, 50, -59.999522, 50.000061]
       ];
 
       inverseTests.forEach(function(test) {
