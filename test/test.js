@@ -530,6 +530,11 @@ function startTests(chai, proj4, testPoints) {
           assert.approximately(actual[0], toLng, 0.000001);
           assert.approximately(actual[1], toLat, 0.000001);
         });
+        it('should reverse interpolate ' + [toLng, toLat] + ' to ' + [fromLng, fromLat], function () {
+          var actual = converter.forward([toLng, toLat]);
+          assert.approximately(actual[0], fromLng, 0.000001);
+          assert.approximately(actual[1], fromLat, 0.000001);
+        });
       });
 
       var inverseTests = [
@@ -546,6 +551,11 @@ function startTests(chai, proj4, testPoints) {
           var actual = converter.inverse([toLng, toLat]);
           assert.approximately(actual[0], fromLng, 0.000001);
           assert.approximately(actual[1], fromLat, 0.000001);
+        });
+        it('should reverse inverse interpolate ' + [fromLng, fromLat] + ' to ' + [toLng, toLat], function () {
+          var actual = converter.forward([fromLng, fromLat]);
+          assert.approximately(actual[0], toLng, 0.000001);
+          assert.approximately(actual[1], toLat, 0.000001);
         });
       });
     });
